@@ -5,6 +5,10 @@ from config import *
 
 connection = sqlite3.connect(DB_FILE)
 cursor = connection.cursor()
-cursor.execute("UPDATE OR IGNORE usuarios SET email = ?, idade = ? WHERE id = ?", ("joao@example.com.br", 39, 2))
+
+cursor.execute("DELETE FROM usuarios;")
+# https://stackoverflow.com/a/17359141/1844007
+# cursor.execute("DELETE FROM SQLITE_SEQUENCE WHERE name='usuarios';")
+
 connection.commit()
 connection.close()

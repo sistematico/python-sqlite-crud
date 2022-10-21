@@ -5,6 +5,9 @@ from config import *
 
 connection = sqlite3.connect(DB_FILE)
 cursor = connection.cursor()
-cursor.execute("UPDATE OR IGNORE usuarios SET email = ?, idade = ? WHERE id = ?", ("joao@example.com.br", 39, 2))
+
+with open(SQL_FILE, 'r') as sql_file:
+  connection.executescript(sql_file.read())
+
 connection.commit()
 connection.close()
