@@ -16,12 +16,17 @@ Operações básicas em bancos de dados SQLite usando o Python.
     * [Update](https://github.com/sistematico/python-sqlite-crud/blob/main/basico/update.py) (Atualiza um registro da tabela)
     * [Delete](https://github.com/sistematico/python-sqlite-crud/blob/main/basico/delete.py) (Apaga um registro da tabela)
     * [Read All](https://github.com/sistematico/python-sqlite-crud/blob/main/basico/read_all.py) (Bônus: Lê todos os registros da tabela)
-    * [Create Many](https://github.com/sistematico/python-sqlite-crud/blob/main/basico/createmany.py)(Bônus: Cria vários registros na tabela)
+    * [Create Many](https://github.com/sistematico/python-sqlite-crud/blob/main/basico/createmany.py) (Bônus: Cria vários registros na tabela)
 * [Avançado](https://github.com/sistematico/python-sqlite-crud/tree/main/avancado)
     * Auto-Close Connection (W.I.P.)
     * Abstraction Class (W.I.P.)
     * [ON CONFLICT](https://github.com/sistematico/python-sqlite-crud/blob/main/avancado/conflict.py) (Insere um registro na tabela, e caso o campo email já exista, altera a idade)
     * [SQL File](https://github.com/sistematico/python-sqlite-crud/blob/main/avancado/sqlfile.py) (Cria as tabelas usando um arquivo SQL)
+
+## Referências
+
+* [Regis Santos](https://github.com/rg3915)
+* [Python Docs](https://docs.python.org/3/library/sqlite3.html)
 
 ## Ajude
 
