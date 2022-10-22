@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS usuarios;
+
+DROP TABLE IF EXISTS grupos;
+
 PRAGMA foreign_keys = ON;
         
 CREATE TABLE IF NOT EXISTS grupos(

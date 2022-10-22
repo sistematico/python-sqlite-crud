@@ -19,9 +19,9 @@ Operações básicas em bancos de dados SQLite usando o Python.
     * [Create Many](https://github.com/sistematico/python-sqlite-crud/blob/main/basico/createmany.py) (Bônus: Cria vários registros na tabela)
 * [Avançado](https://github.com/sistematico/python-sqlite-crud/tree/main/avancado)
     * Auto-Close Connection (W.I.P.)
-    * Abstraction Class (W.I.P.)
+    * [Abstraction Class](https://github.com/sistematico/python-sqlite-crud/blob/main/avancado/class.py) (Classe de abstração do Banco de Dados)
     * [ON CONFLICT](https://github.com/sistematico/python-sqlite-crud/blob/main/avancado/conflict.py) (Insere um registro na tabela, e caso o campo email já exista, altera a idade)
-    * [SQL File](https://github.com/sistematico/python-sqlite-crud/blob/main/avancado/sqlfile.py) (Cria as tabelas usando um arquivo SQL)
+    * [Import from SQL File](https://github.com/sistematico/python-sqlite-crud/blob/main/avancado/import.py) (Cria as tabelas usando um arquivo SQL)
 
 ## Referências
 

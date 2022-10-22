@@ -4,28 +4,21 @@ import sqlite3
 from config import *
 
 class Database:
-    DB_FILE = "database.db"
 
     def __init__(self):
-        self.connection = sqlite3.connect(self.DB_FILE)
-        self.connection.set_trace_callback(print)
-        # self.cursor = self.connection.cursor()
+        self.connection = sqlite3.connect(DB_FILE)
+        self.cursor = self.connection.cursor()
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, ext_type, exc_value, traceback):
-        self.cursor.close()
-
-        if isinstance(exc_value, Exception):
-            self.connection.rollback()
-        else:
-            self.connection.commit()
-        
-        # self.connection.close()
+    def __exit__(self):
+        self.connection = sqlite3.connect(DB_FILE)
+        self.cursor = self.connection.cursor()
 
     def close(self):
         self.connection.close()
+
+    def insert(self, payload, params):
+        self.cursor.execute(payload, params)
+        self.connection.commit()
 
     def execute(self, payload, params):
         self.cursor.execute(payload, params)
@@ -39,23 +32,19 @@ class Database:
     def fetchone(self, query):
         self.cursor.execute(query)        
         row = self.cursor.fetchone()        
-        
-        if rows:
-            return rows[0]
-        else:
-            return 0
+        return row[0] if row else 'Nenhum resultado.'
 
-    def query(self, query, params, ret=True):
-        self.cursor.execute(query, params)        
-        rows = self.cursor.fetchone()        
+    def fetchmany(self, query):
+        self.cursor.execute(query)        
+        rows = self.cursor.fetchall()        
         self.connection.close()
-
-        if ret:
-            if rows:
-                return rows[0]
-            else:
-                return 0
+        return rows[0] if rows else 'Nenhum resultado.'
 
     def create_table(self):
-        with open('sql/database.sql', 'r') as sql_file:
+        with open(SQL_FILE, 'r') as sql_file:
             self.connection.executescript(sql_file.read())
+
+db = Database()
+result = db.fetchmany("SELECT * FROM usuarios;")
+print(result)
+
