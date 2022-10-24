@@ -1,6 +1,5 @@
-DROP TABLE IF EXISTS usuarios;
-
-DROP TABLE IF EXISTS grupos;
+-- DROP TABLE IF EXISTS usuarios;
+-- DROP TABLE IF EXISTS grupos;
 
 PRAGMA foreign_keys = ON;
         
@@ -21,6 +20,8 @@ CREATE TABLE IF NOT EXISTS usuarios(
   idade INTEGER,
   warnings INTEGER NOT NULL DEFAULT 0,
   likes INTEGER NOT NULL DEFAULT 0,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  modified_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY(gid) REFERENCES grupos (gid)
 );
 
